@@ -23,3 +23,8 @@
 * postgres
 
 Για τα στυλ της παρούσας εφαρμογής χρησιμοποιήθηκαν compiled αρχεία της bootstrap με τη βοήθεια του εργαλείου parcel.
+
+Το αποθετήριο github για την παρούσα εργασία είναι:
+
+[https://github.com/kster735/bookclub](https://github.com/kster735/bookclub)
+
