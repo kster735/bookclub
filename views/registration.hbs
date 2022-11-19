@@ -1,0 +1,34 @@
+<div class="container-sm bg-light border rounded p-5 mb-5">
+    <h2 class="b-3">Εγγραφή Χρήστη</h2>
+    <form action="/doregister" method="post" class="myForm">
+        <div class="mb-5">
+            <label for="newTitle" class="form-label">Νέο όνομα χρήστη:</label>
+            <input type="text" class="form-control rounded {{#if message.newUsername}} is-invalid {{/if}}" id="newUsername"
+                value="{{newUsername}}" name="newUsername" placeholder="Όνομα χρήστη" required="required" autofocus>
+            <div class="valid-feedback"> Μια χαρά!</div>
+            <div class="invalid-feedback"> {{message.newUsername.msg}} </div>
+        </div>
+        <div class="mb-2">
+            <label for="newAuthor" class="form-label">Κωδικός χρήστη:</label>
+            <input type="password" class="form-control rounded {{#if message.newPassword}} is-invalid {{/if}}"
+                id="newPassword" value="{{newPassword}}" name="newPassword"
+                required="required" placeholder="Κωδικός χρήστη">
+            <div class="valid-feedback"> Μια χαρά!</div>
+            <div class="invalid-feedback">{{message.newPassword.msg}}</div>
+        </div>
+        <div class="mb-5">
+            <label for="newAuthor" class="form-label">Επανάληψη κωδικού:</label>
+            <input type="password" class="form-control rounded {{#if message.newPasswordRepeat}} is-invalid {{/if}}"
+                id="newPasswordRepeat" value="{{newPasswordRepeat}}" name="newPasswordRepeat"
+                placeholder="Επανάληψη κωδικού" required="required">
+            <div class="valid-feedback"> Μια χαρά!</div>
+            <div class="invalid-feedback">{{message.newPasswordRepeat.msg}}</div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Εγγραφή</button>
+                <a href="/" class="text-white btn btn-success">Είσοδος</a>
+            </div>
+        </div>
+    </form>
+</div>

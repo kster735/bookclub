@@ -1,0 +1,37 @@
+{{#if newmessage}}
+    <div class="container container-sm">
+        <div class="alert alert-success" role="alert">{{newmessage}}</div>
+    </div>
+{{/if}}
+<div class="container container-sm bg-light border border-info border-1 my-5 rounded">
+    <form action="/books" method="post">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h2 class="text-center mb-5">Είσοδος στην Εφαρμογή ...</h2>
+                <div class="form-group mb-3">
+                    <div class="form-floating">
+                        <input type="text" id="username"
+                            class="form-control {{#if message.username}} is-invalid {{/if}}" value="" name="username"
+                            placeholder="Όνομα χρήστη" required="required" autofocus>
+                        <label for="username">Όνομα χρήστη</label>
+                        <div class="invalid-feedback">{{message.username.msg}}</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-floating">
+                        <input type="password" class="form-control {{#if message.password}} is-invalid {{/if}}" value=""
+                            name="password" placeholder="Συνθηματικό" required="required" autofocus>
+                        <label for="password">Συνθηματικό</label>
+                        <div class="invalid-feedback">{{message.password.msg}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-6 offset-3">
+                <button type="submit" class="btn btn-primary">Είσοδος</button>
+                <a href="/register" class="text-white btn btn-success">Εγγραφή</a>
+            </div>
+        </div>
+    </form>
+</div>

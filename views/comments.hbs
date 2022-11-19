@@ -1,0 +1,80 @@
+
+<div class="container container-sm bg-light border rounded  p-5 mt-5 mb-2">
+    <h2 class="b-3">Εισαγωγή σχολίου</h2>
+    <form action="/doAddComment" method="post" class="myForm">
+
+        <div class="mb-2">
+            <label for="title" class="form-label">Τίτλος:</label>
+            <input type="text" class="form-control rounded" id="tiltle" name="title-dis" value="{{book.title}}"
+                disabled>
+        </div>
+        <div class="mb-5">
+            <label for="author" class="form-label">Συγγραφέας:</label>
+            <input type="text" class="form-control rounded" id="author" name="author-dis" value="{{book.author}}"
+                disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="comment">Σχόλιο:</label>
+            <textarea class="form-control rounded {{#if message.comment}} is-invalid {{/if}}" id="comment"
+                name="comment" placeholder="Γράψτε εδώ το σχόλιό σας..." rows="4" autofocus></textarea>
+            <div class="invalid-feedback">{{message.comment.msg}}</div>
+        </div>
+
+        {{!-- Κρυφά inputs στέλνουν τίτλο και συγγραφέα --}}
+        <input type="hidden" name="title" value="{{book.title}}">
+        <input type="hidden" name="author" value="{{book.author}}">
+
+        <div class="row my-5">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Αποστολή</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+{{#if comments}}
+<div id="top" class="container-sm py-5">
+    <div class="card bg-light fs-6 shadow-lg">
+        <span class="text-light bg-dark fs-6 px-2 rounded-top">Πίνακας 2: Σχόλια </span>
+        <table class="table table-light table-striped table-hover table-responsive">
+            <thead class="table-dark">
+                 <tr>
+                     <th scope="col"> A/A </th> <th>Χρήστης</th> <th scope="col">Σχόλιο</th>
+                 </tr>
+            </thead>
+            <tbody>
+            {{#each comments}}
+                {{#if this.comment}}
+                    <tr>
+                        <td>  {{inc @index}} </td> <td> {{this.user}} </td>  <td> {{this.comment}} </td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{/if}}
+{{#unless comments}}
+    <div id="top" class="container-sm mx-5 py-5">
+        <div class="card bg-light fs-6 shadow-lg">
+            <span class="text-light bg-dark fs-6 px-2 rounded-top">Πίνακας 2: Σχόλια </span>
+            <table class="table table-light table-striped table-hover table-responsive">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col"> A/A </th> <th scope="col">Χρήστης</th> <th scope="col">Σχόλιο</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> </td> <td colspan="2" class="text-center fs-2 text-danger text-bold">Κανείς χρήστης δεν έχει γράψει σχόλιο </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{{/unless}}
+
