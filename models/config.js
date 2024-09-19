@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize("postgres://iflexic1_root:o$q9sixT};6l@localhost:5432/iflexic1_bookclub_db", {
     dialect: 'postgres',
     // dialectOptions: {
     //     ssl: {
