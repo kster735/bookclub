@@ -6,3 +6,4 @@ npm-debug.log
 .DS_Store
 # το αρχείο dotenv (.env)
 *.env
+public/bookclub

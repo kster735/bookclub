@@ -34,11 +34,16 @@ app.set('views', './views')
 const base = process.env.BASE_PATH
 
 app.use(myBooksSession)
-app.use(express.static(`./${base}/public`))
+
+if (base === '' ) {
+    app.use(express.static("public"))
+} else {
+    app.use(express.static(`${base}/public`))
+}
 app.use(express.urlencoded({extended: false}))
 
 
-app.use(`/${base}`, router)
+app.use("/bookclub", router)
 
 // app.use((req, res) =>{
 //     res.redirect(`/${base}`);
