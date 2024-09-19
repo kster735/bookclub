@@ -31,11 +31,12 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', './views')
 
+const base = process.env.BASE_PATH
+
 app.use(myBooksSession)
-app.use(express.static('public'))
+app.use(express.static(`./${base}/public`))
 app.use(express.urlencoded({extended: false}))
 
-const base = process.env.BASE_PATH
 
 app.use(`/${base}`, router)
 
