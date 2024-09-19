@@ -13,9 +13,9 @@
         {{#each books}}
                 <tr>
                     <td scope="col">  {{inc @index}} </td> <td scope="col"> {{this.title}} </td>  <td scope="col"> {{this.author}} </td>
-                    <td scope="col"> <form action="/deletebook" method="post"> <input type="hidden" name="title" value="{{this.title}}">  <input class="btn btn-outline-danger btn-sm fs-6 px-3" type="submit" value="x"> </form> </td>
+                    <td scope="col"> <form action="/bookclub/deletebook" method="post"> <input type="hidden" name="title" value="{{this.title}}">  <input class="btn btn-outline-danger btn-sm fs-6 px-3" type="submit" value="x"> </form> </td>
                     <td scope="col">
-                        <form action="/goToCommentPage" method="post">
+                        <form action="/bookclub/goToCommentPage" method="post">
                         {{!--
                             Κρυμμένα input που αποθηκεύουν τίτλο και συγγραφέα της συγκεκριμένης σειράς.
                             Με post method αποστέλλονται στη φόρμα εισαγωγής σχολίου.

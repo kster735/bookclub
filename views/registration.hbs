@@ -1,6 +1,6 @@
 <div class="container-sm bg-light border rounded p-5 mb-5">
     <h2 class="b-3">Εγγραφή Χρήστη</h2>
-    <form action="/doregister" method="post" class="myForm">
+    <form action="/bookclub/doregister" method="post" class="myForm">
         <div class="mb-5">
             <label for="newTitle" class="form-label">Νέο όνομα χρήστη:</label>
             <input type="text" class="form-control rounded {{#if message.newUsername}} is-invalid {{/if}}" id="newUsername"
@@ -27,7 +27,7 @@
         <div class="row my-5">
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Εγγραφή</button>
-                <a href="/" class="text-white btn btn-success">Είσοδος</a>
+                <a href="/bookclub" class="text-white btn btn-success">Είσοδος</a>
             </div>
         </div>
     </form>

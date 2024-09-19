@@ -6,6 +6,8 @@ import * as BookUsersController from './controllers/bookUsersController.js'
 
 const router = express.Router()
 
+const base = process.env.BASE_PATH
+
 router.get('/', (req, res) => {
     res.render('home')
 })
