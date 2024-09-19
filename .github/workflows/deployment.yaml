@@ -19,6 +19,8 @@ jobs:
     
     - name: Build Project
       run: |
+        export SESSION_SECRET="dkau82838hfdklfakld2039"
+        export DATABASE_URL="postgres://postgres:c0pr@n@@localhost:5432/bookclubdb"
         npm install
         npm start
       
