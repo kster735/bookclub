@@ -35,12 +35,12 @@ app.use(myBooksSession)
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 
+const base = process.env.BASE_PATH
 
-
-app.use('/', router)
+app.use(`${base}`, router)
 
 app.use((req, res) =>{
-    res.redirect('/');
+    res.redirect(`/${base}`);
 })
 
 
