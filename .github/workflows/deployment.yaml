@@ -20,7 +20,7 @@ jobs:
     - name: Build Project
       run: |
         export SESSION_SECRET="dkau82838hfdklfakld2039"
-        export DATABASE_URL="postgres://iflexic1:o$q9sixT};6l@127.0.0.200:5432/iflexic1_bookclub_db"
+        export DATABASE_URL="postgres://iflexic1:o$q9sixT};6l@iflexico.com:7822/iflexic1_bookclub_db"
         npm install
         npm start
       
