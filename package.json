@@ -1,11 +1,12 @@
 {
-  "name": "vivlioleshi",
+  "name": "bookclub",
   "version": "3.1.0",
   "description": "",
-  "main": "app.js",
+  "main": "loader.cjs",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "node loader.cjs",
+    "dev": "nodemon loader.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
@@ -14,7 +15,7 @@
     ]
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "keywords": [],
   "author": "Stergios Katsogiannis",
@@ -33,6 +34,6 @@
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^3.1.6"
   }
 }
