@@ -37,7 +37,7 @@ app.use(express.urlencoded({extended: false}))
 
 const base = process.env.BASE_PATH
 
-app.use(`${base}`, router)
+app.use(`/${base}`, router)
 
 // app.use((req, res) =>{
 //     res.redirect(`/${base}`);
@@ -54,7 +54,7 @@ app.use((err, req, res, next) => {
     res.render('home', {message: err.message})
 })
 
-const PORT = process.env.PORT || '' // we won't a port in production for cpanel
+const PORT = process.env.PORT || '' // we won't need a port in production for cpanel
 
 app.listen(PORT, () => {
     console.log(`Η εφαρμογή ξεκίνησε στη θύρα -> ${PORT}`)
