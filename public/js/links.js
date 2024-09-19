@@ -6,7 +6,7 @@ const links = [
 
 links.forEach((elem) => {
   const url = location.href.toString().split("/")[4];
-
+  console.log(url)
   if (elem.getAttribute("id") === "/bookclub/" + url) {
     elem.classList.add("active");
   } else {
