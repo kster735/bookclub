@@ -7,7 +7,8 @@ const doAddBook = async (req, res, next) => {
             "author": req.body["newAuthor"]
         }
         await BookList.addBook(newBook, req.session.username)
-        next() // next is books.handlebars
+        res.redirect('/bookclub/books')
+        // next() // next is books.handlebars
     } catch (error) {
         next(error) // redirects to error page
     }
