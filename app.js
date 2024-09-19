@@ -39,15 +39,15 @@ const base = process.env.BASE_PATH
 
 app.use(`${base}`, router)
 
-app.use((req, res) =>{
-    res.redirect(`/${base}`);
-})
+// app.use((req, res) =>{
+//     res.redirect(`/${base}`);
+// })
 
 
-app.use((err, req, res, next) => {
-    console.log("error occured: " + err.message)
-    next(err)
-})
+// app.use((err, req, res, next) => {
+//     console.log("error occured: " + err.message)
+//     next(err)
+// })
 
 app.use((err, req, res, next) => {
     console.log(err.stack)
