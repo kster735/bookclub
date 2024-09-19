@@ -54,7 +54,7 @@ app.use((err, req, res, next) => {
     res.render('home', {message: err.message})
 })
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || '' // we won't a port in production for cpanel
 
 app.listen(PORT, () => {
     console.log(`Η εφαρμογή ξεκίνησε στη θύρα -> ${PORT}`)
