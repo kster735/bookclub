@@ -37,13 +37,13 @@ async function isLoggedIn(req, res, next) {
         res.locals.username = req.session.username
         next()
     } else {
-        res.redirect('/')
+        res.redirect('/bookclub')
     }
 }
 
 const doLogout = (req, res) => {
     req.session.destroy()
-    res.redirect('/')
+    res.redirect('/bookclub')
 }
 
 export { isLoggedIn, doLogin, doRegister, doLogout }

@@ -15,7 +15,7 @@ const doAddBook = async (req, res, next) => {
 
 const doDeleteBook = async (req, res) => {
     await BookList.deleteBook(req.body["title"], req.session.username)
-    res.redirect('/books')
+    res.redirect('/bookclub/books')
 }
 
 async function showBookList(req, res, next) {
